@@ -1,8 +1,64 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>Nick Driscoll's blog</title>
-	</head>
-	<body>
-		ASDASJKUDGHFDZTGHNDXTGFY
-	</body>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/default.css">
+        <title>Nick Driscoll's 3D graphics programming blog</title>
+    </head>
+    <body>
+    <div>
+      <div class="site-header">
+        <a href=http://example.com>
+          <img src="/images/my_avi.jpg" width="64" height="64"></img><h2>Homepage</h2>
+        </a>
+        <a href="https://github.com/NickDriscoll">
+          <img src="/images/github_icon.png" width="64" height="64"></img><h2>My Github</h2>
+        </a>
+      </div>
+      <h2>Nick Driscoll's 3D graphics programming blog</h2>
+      <p><a href="http://example.com/portfolio.html">My Portfolio</a></p>
+<hr />
+<h2>Embedded Rust source test:</h2>
+<pre style="background-color:#2b303b;">
+<code><span style="color:#c0c5ce;">
+</span><span style="color:#c0c5ce;">    </span><span style="color:#b48ead;">let</span><span style="color:#c0c5ce;"> phys_devices = </span><span style="color:#b48ead;">match</span><span style="color:#c0c5ce;"> vk_instance.</span><span style="color:#96b5b4;">enumerate_physical_devices</span><span style="color:#c0c5ce;">() {
+</span><span style="color:#c0c5ce;">        Ok(devices) =&gt; { devices }
+</span><span style="color:#c0c5ce;">        Err(e) =&gt; { </span><span style="color:#96b5b4;">crash_with_error_dialog</span><span style="color:#c0c5ce;">(&amp;format!(&quot;</span><span style="color:#a3be8c;">Unable to enumerate physical devices: </span><span style="color:#d08770;">{}</span><span style="color:#c0c5ce;">&quot;, e)); }
+</span><span style="color:#c0c5ce;">    };
+</span><span style="color:#c0c5ce;">
+</span><span style="color:#c0c5ce;">    </span><span style="color:#65737e;">//Search for the physical device
+</span><span style="color:#c0c5ce;">    </span><span style="color:#b48ead;">const </span><span style="color:#d08770;">DEVICE_TYPES</span><span style="color:#c0c5ce;">: [vk::PhysicalDeviceType; </span><span style="color:#d08770;">3</span><span style="color:#c0c5ce;">] = [
+</span><span style="color:#c0c5ce;">        vk::PhysicalDeviceType::</span><span style="color:#d08770;">DISCRETE_GPU</span><span style="color:#c0c5ce;">,
+</span><span style="color:#c0c5ce;">        vk::PhysicalDeviceType::</span><span style="color:#d08770;">INTEGRATED_GPU</span><span style="color:#c0c5ce;">,
+</span><span style="color:#c0c5ce;">        vk::PhysicalDeviceType::</span><span style="color:#d08770;">CPU
+</span><span style="color:#c0c5ce;">    ];
+</span><span style="color:#c0c5ce;">    </span><span style="color:#b48ead;">let mut</span><span style="color:#c0c5ce;"> phys_device = None;
+</span><span style="color:#c0c5ce;">    &#39;gpu_search: </span><span style="color:#b48ead;">for</span><span style="color:#c0c5ce;"> d_type in </span><span style="color:#d08770;">DEVICE_TYPES </span><span style="color:#c0c5ce;">{
+</span><span style="color:#c0c5ce;">        </span><span style="color:#b48ead;">for</span><span style="color:#c0c5ce;"> device in phys_devices.</span><span style="color:#96b5b4;">iter</span><span style="color:#c0c5ce;">() {
+</span><span style="color:#c0c5ce;">            </span><span style="color:#b48ead;">let</span><span style="color:#c0c5ce;"> props = vk_instance.</span><span style="color:#96b5b4;">get_physical_device_properties</span><span style="color:#c0c5ce;">(*device);
+</span><span style="color:#c0c5ce;">            </span><span style="color:#b48ead;">if</span><span style="color:#c0c5ce;"> props.device_type == d_type {
+</span><span style="color:#c0c5ce;">                </span><span style="color:#b48ead;">let</span><span style="color:#c0c5ce;"> name = CStr::from_ptr(props.device_name.</span><span style="color:#96b5b4;">as_ptr</span><span style="color:#c0c5ce;">()).</span><span style="color:#96b5b4;">to_str</span><span style="color:#c0c5ce;">().</span><span style="color:#96b5b4;">unwrap</span><span style="color:#c0c5ce;">();
+</span><span style="color:#c0c5ce;">                println!(&quot;</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#d08770;">{}</span><span style="color:#96b5b4;">\&quot;</span><span style="color:#a3be8c;"> was chosen as primary GPU.</span><span style="color:#c0c5ce;">&quot;, name);
+</span><span style="color:#c0c5ce;">                phys_device = Some(*device);
+</span><span style="color:#c0c5ce;">                </span><span style="color:#b48ead;">break &#39;gpu_search</span><span style="color:#c0c5ce;">;
+</span><span style="color:#c0c5ce;">            }
+</span><span style="color:#c0c5ce;">        }
+</span><span style="color:#c0c5ce;">    }
+</span><span style="color:#c0c5ce;">
+</span><span style="color:#c0c5ce;">    vk_physical_device = </span><span style="color:#b48ead;">match</span><span style="color:#c0c5ce;"> phys_device {
+</span><span style="color:#c0c5ce;">        Some(device) =&gt; { device }
+</span><span style="color:#c0c5ce;">        None =&gt; { </span><span style="color:#96b5b4;">crash_with_error_dialog</span><span style="color:#c0c5ce;">(&quot;</span><span style="color:#a3be8c;">Unable to selected physical device.</span><span style="color:#c0c5ce;">&quot;); }
+</span><span style="color:#c0c5ce;">    };
+</span></code></pre>
+<hr />
+<h2>Referenced image test</h2>
+<a href="http://example.com/scapegoat.html">
+    <img src="https://product-images.tcgplayer.com/fit-in/421x421/174406.jpg" />
+</a>
+<h2>All current site pages:</h2>
+<h4>How I learned to stop worrying and love the BRDF</h4>
+<p><a href="posts/how-i-learned-to-stop-worrying-and-love-the-brdf.html">How I learned to stop worrying and love the BRDF</a></p>
+
+    </div>
+  </body>
 </html>
