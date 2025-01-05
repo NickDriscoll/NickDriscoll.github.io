@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Personal on Nick Driscoll&#39;s blog</title>
+    <link>https://nickdriscoll.github.io/categories/personal/</link>
+    <description>Recent content in Personal on Nick Driscoll&#39;s blog</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 01 Jan 2025 22:04:23 -0500</lastBuildDate>
+    <atom:link href="https://nickdriscoll.github.io/categories/personal/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction</title>
+      <link>https://nickdriscoll.github.io/post/2025/01/01/introduction/</link>
+      <pubDate>Wed, 01 Jan 2025 22:04:23 -0500</pubDate>
+      <guid>https://nickdriscoll.github.io/post/2025/01/01/introduction/</guid>
+      <description>&lt;h2 id=&#34;start&#34;&gt;Start&lt;/h2&gt;&#xA;&lt;p&gt;First, Happy New Year!&lt;/p&gt;&#xA;&lt;p&gt;After many years of reading and admiring the blogs of other game developers and graphics programmers, I decided to make it a resolution to maintain a blog of my own. I have been wanting to collect my thoughts in a centralized location, as well as build a platform with which I can make more of a name for myself. In this post, I&amp;rsquo;ll introduce myself, then talk about my ideas for posts, and finally describe my graphics programming background.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
